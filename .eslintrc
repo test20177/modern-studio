@@ -1,0 +1,45 @@
+{
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "rules": {
+    "no-useless-escape": "off",
+    "import/prefer-default-export": "off",    
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": "off",
+    // "no-anonymous-exports-page-templates": "warn",
+    // "limited-exports-page-templates": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["./src/pages/*.jsx"],
+      "rules": {
+        "no-unused-expressions": "off",
+        "eslint-plugin-import/no-default-export": "off"
+      }
+    }, {
+      "files": ["gatsby-browser.js"],
+      "rules": {
+        "react/jsx-filename-extensions": "off",
+        "react/jsx-props-no-spreading": "off"
+      }
+    }
+  ]
+}
