@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { Navigation } from '../components/Navigation';
 
 const H1 = styled.h1`
   font-family: ${({ theme }) => theme.font.family.montserrat};

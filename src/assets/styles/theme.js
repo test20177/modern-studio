@@ -13,6 +13,7 @@ export const theme = {
       headingSmall: '4.2rem',
       paragraph: '1.6rem',
       caption: '1.35rem',
+      mobileMenu: '2rem',
     },
     family: {
       montserrat: '"Montserrat", sans-serif',

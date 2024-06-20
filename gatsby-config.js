@@ -34,7 +34,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/assets/images/icon.png',
+        icon: 'src/assets/icons/favicon.png',
       },
     },
     {
@@ -62,5 +62,13 @@ module.exports = {
         display: 'swap',
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/,
+        }
+      }
+    }
   ],
 };
