@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from '../assets/styles/GlobalStyles';
 import { theme } from '../assets/styles/theme';
 import { Navigation } from './Navigation';
+import '../assets/styles/normalize.css';
 
 export const MainTemplate = ({ children }) => {
   return (
@@ -11,7 +12,9 @@ export const MainTemplate = ({ children }) => {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Navigation />
-        {children}
+        <main>
+          {children}
+        </main>
       </ThemeProvider>
     </>
   );
