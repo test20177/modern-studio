@@ -12,27 +12,10 @@ const OuterWrapper = styled.div`
   align-items: center;
   width: 100%;
   padding: 20px;
-`;
-
-const Wrapper = styled.div`
-  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};  
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: white;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px;
 `;
 
-const StyledLogo = styled(Logo)`
-  width: ${({ isSmall }) => (isSmall ? '50px' : '100px')};
-`;
-
-const StyledBurger = styled.div`
+const StyledBurger = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -43,16 +26,44 @@ const StyledBurger = styled.div`
   cursor: pointer;
   padding: 0;
   z-index: 10;
-  &:focus {
-    outline: none;
-  }
+
   div {
     width: 2rem;
-    height: 0.25rem;
+    height: 0.15rem;
     background: black;
-    transition: all 0.3s linear;
     position: relative;
-    transform-origin: 1px;
+  }
+  ${({ theme }) => theme.mq.desktop} {
+    display: none;
+  }
+`;
+
+const Wrapper = styled.div`
+  display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};  
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: static;
+  top: 0;
+  left: 0;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  ${({ theme }) => theme.mq.desktop } {
+    display:  flex;
+    flex-direction: row;
+    width: 100%;
+    height: unset;
+    background-color: transparent;
+    padding: 25px 45px;
+  }
+`;
+
+const StyledLogo = styled(({ isSmall, isMobile, ...props }) => <Logo {...props} />)`
+  width: ${({ isSmall }) => (isSmall ? '60px' : '100px')};
+  ${({ theme }) => theme.mq.desktop } {
+    display: ${({ isMobile }) => (isMobile ? 'none' : 'initial')};
   }
 `;
 
@@ -60,23 +71,35 @@ const StyledSocialIcon = styled(StyledIcon)`
   margin: 0 20px;
   width: 50px;
   height: 50px;
+  ${({ theme }) => theme.mq.desktop } {
+    width: 25px;
+    height: 25px;
+    margin: 0 15px;
+  }
 `;
 
-const StyledNavigationIcon = styled.nav`
+const StyledNavigation = styled.nav`
   ul {
     list-style: none;
     padding: 0;
     text-align: center;
     li {
-      margin: 50px 0;   
+      margin: 50px 0px;   
       a {
         color: black;
         text-decoration: none;
         font-size: ${({ theme }) => theme.font.size.mobileMenu };
       }
     }
-
-    
+  }
+  ${({ theme }) => theme.mq.desktop } {
+    margin-left: auto;
+    ul {
+      display: flex;
+      li {
+        margin: 0 20px;
+      }
+    }
   }
 `;
 
@@ -84,21 +107,21 @@ export const Navigation = () => {
 
   const [isOpen, setIsOpen] = useState(false);
  
-  const toggleNavigation = () => {
-    setIsOpen(!isOpen)
-
-  }
+  const toggleNavigation = () => setIsOpen(!isOpen);
 
   return (
     <OuterWrapper>
-      <Link to="/"><StyledLogo isSmall /></Link>
+      <Link to="/"><StyledLogo isSmall isMobile /></Link>
       <StyledBurger onClick={toggleNavigation}>
         <div />
         <div />
         <div />
       </StyledBurger>
       <Wrapper isOpen={isOpen}>
-        <StyledNavigationIcon>
+        <Link to="/">
+          <StyledLogo />
+        </Link>
+        <StyledNavigation>
           <ul>
             <li><Link to="/">Oferty</Link></li>
             <li><Link to="/">Realizacje</Link></li>
@@ -106,7 +129,7 @@ export const Navigation = () => {
             <li><Link to="/">Usługi</Link></li>
             <li><Link to="/">Kontakt</Link></li>
           </ul>
-        </StyledNavigationIcon>
+        </StyledNavigation>
         <div>
           <StyledSocialIcon isDark>
             <FacebookIcon />
@@ -117,5 +140,5 @@ export const Navigation = () => {
         </div>
       </Wrapper>
     </OuterWrapper>
-  )
+  );
 };

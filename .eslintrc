@@ -25,6 +25,9 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-props-no-spreading": "off",
     "react/function-component-definition": "off",
+    "react/button-has-type": "off",
+    "jsx-a11y/label-has-associated-control": "warn",
+    "react/require-default-props": "off",
     // "no-anonymous-exports-page-templates": "warn",
     // "limited-exports-page-templates": "warn"
   },
