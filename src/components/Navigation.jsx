@@ -26,18 +26,14 @@ const StyledBurger = styled.button`
   cursor: pointer;
   padding: 0;
   z-index: 10;
-  &:focus {
-    outline: none;
-  }
+
   div {
     width: 2rem;
-    height: 0.25rem;
+    height: 0.15rem;
     background: black;
-    transition: all 0.3s linear;
     position: relative;
-    transform-origin: 1px;
   }
-  ${({ theme }) => theme.mq.desktop } {
+  ${({ theme }) => theme.mq.desktop} {
     display: none;
   }
 `;

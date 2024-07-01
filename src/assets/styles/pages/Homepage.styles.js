@@ -41,7 +41,7 @@ export const WelcomeSection = styled(StyledSection)`
 `;
 
 export const WelcomeSectionContent = styled.div`
-  background-color: ${({ theme }) => theme.color.black };
+  background-color: ${({ theme }) => theme.color.dark };
   padding: 30px 20px;
   position: relative;
   h2 {
@@ -59,7 +59,7 @@ export const WelcomeSectionContent = styled.div`
     height: 70px;
     content: '';
     clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 100%, 85% 15%, 0 15%);
-    background-color: ${({ theme }) => theme.color.black};
+    background-color: ${({ theme }) => theme.color.dark};
     right: -20px;
     top: -20px;
   }
@@ -106,7 +106,7 @@ export const ShowcaseButtonContainer = styled.div`
   `;
 
 export const StyledButton = styled.button`
-  border: 1px solid ${({ theme }) => theme.color.black};
+  border: 1px solid ${({ theme }) => theme.color.dark};
   background-color: transparent;
   font-size: ${({ theme }) => theme.font.size.button};
     font-family: ${({ theme }) => theme.font.family.montserrat};
@@ -132,21 +132,6 @@ export const ServicesSection = styled(StyledSection)`
     
 `;
 
-export const HighlightedHeading = styled.div`
-  font-size: ${({ theme }) => theme.font.size.headingSmall}; 
-  position: relative;  
-  &::before {
-    z-index: -1;
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: calc(${({ theme }) => theme.font.size.headingSmall} * 1.5);
-    top: calc()(${({ theme }) => theme.font.size.headingSmall} / 6);
-    left: -50%;
-    background-color: ${({ theme }) => theme.color.beige};    
-  } 
-`;
-
 export const StyledList = styled.ul`
   padding: 0;
   list-style: none;
@@ -166,27 +151,17 @@ export const TeamImage = styled.div`
   margin-top: 30px;
   width: 90%;
   height: 300px;
-  object-fit: cover;
+  position: relative;  
   background-image: url("${({ imageSource }) => imageSource}");
   background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  &::after {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    content: '';
-    clip-path: polygon(85% 0, 85% 85%, 0 85%, 0 100%, 100% 100%, 100% 0);
-    background-color: ${({ theme }) => theme.color.black};
-    right: -20px;
-    bottom: -20px;
-  }
+  background-size: cover;    
+  ${({ theme }) => theme.effect.corner({ position: 'bottomRight' })};
 `;
 
 export const StyledLinkButton = styled(Link)`
   font-family: ${({ theme }) => theme.font.family.montserrat};
   font-size: ${({ theme }) => theme.font.size.paragraph};
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.dark};
   text-decoration: underline;
   position: relative;  
   &::after {

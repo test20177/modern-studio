@@ -15,15 +15,14 @@ import {
   ShowcaseGallery,
   ShowcaseImage,
   ServicesSection,
-  HighlightedHeading,
   StyledList,
   TeamSection,
   StyledLinkButton,
   ReviewSection,
   ContactForm,
-  TeamImage
+  TeamImage,
 } from '../assets/styles/pages/Homepage.styles';
-
+import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
 
 const HomePage = ({ data }) => (
   <>
