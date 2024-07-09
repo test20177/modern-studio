@@ -21,4 +21,4 @@ export const StyledIcon = ({ children, ...props }) => (
 
 StyledIcon.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};

@@ -4,7 +4,6 @@ import {
   Hero,
   HeroHeading,
   HeroParagraph,
-  ContentWrapper,
   WelcomeSection,
   WelcomeSectionContent,
   WelcomeSectionImage,
@@ -12,7 +11,6 @@ import {
   ShowcaseSection,
   ShowcaseButtonContainer,
   StyledButton,
-  ShowcaseGallery,
   ShowcaseImage,
   ServicesSection,
   StyledList,
@@ -23,6 +21,7 @@ import {
   TeamImage,
   StyledReview
 } from '../assets/styles/pages/Homepage.styles';
+import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
 import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
 
 const HomePage = ({ data }) => (

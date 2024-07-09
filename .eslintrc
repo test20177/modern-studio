@@ -39,7 +39,7 @@
         "eslint-plugin-import/no-default-export": "off"
       }
     }, {
-      "files": ["gatsby-browser.js"],
+      "files": ["gatsby-browser.js", "gatsby-ssr.js"],
       "rules": {
         "react/jsx-filename-extensions": "off",
         "react/jsx-props-no-spreading": "off"
