@@ -14,12 +14,17 @@ export const Hero = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   padding: 35px;
-  `;
+`;
 
 export const HeroHeading = styled.h1`  
   font-size: ${({ theme }) => theme.font.size.headingMobile};  
   margin: 0;
   text-shadow:${({ theme }) => theme.font.shadow};
+  ${({ theme }) => theme.mq.desktop} {
+    font-size: ${({ theme }) => theme.font.size.heading};
+    max-width: 500px;
+    text-align: center;
+  }
 `;
 
 export const HeroParagraph = styled.p`  
@@ -30,14 +35,32 @@ export const HeroParagraph = styled.p`
 
 export const ContentWrapper = styled.div`
   padding: 0 20px;
+  ${({ theme }) => theme.mq.desktop} {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 100px;
+  }
 `;
 
 export const StyledSection = styled.section`
   margin: 100px 0;
+  ${({ theme }) => theme.mq.desktop} {
+    margin: 100px 0;
+  }
 `;
 
-export const WelcomeSection = styled(StyledSection)`
- margin: 70px 0;
+export const WelcomeSection = styled(StyledSection)` 
+ padding: 0 20px;
+ ${({ theme }) => theme.mq.desktop}  {  
+  margin: 180px 0 150px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+ }
+ ${({ theme }) => theme.mq.bigDesktop}  {  
+  margin: 180px 0 100px;
+ }
 `;
 
 export const WelcomeSectionContent = styled.div`
@@ -63,7 +86,21 @@ export const WelcomeSectionContent = styled.div`
     right: -20px;
     top: -20px;
   }
-  `;
+  ${({ theme }) => theme.mq.desktop} {
+    position: absolute;    
+    width: 55%;
+    top: 100px;
+    height: auto;
+    padding: 50px;
+    right: 20px;    
+    h2 {
+      font-size: ${({ theme }) => theme.font.size.headingSmall};
+    }
+  }
+  ${({ theme }) => theme.mq.bigDesktop} {
+    top: 130px;
+  }
+`;
 
 export const WelcomeSectionImage = styled.div`  
   width: 90%;
@@ -73,6 +110,7 @@ export const WelcomeSectionImage = styled.div`
   background-image: url("${({ imageSource }) => imageSource}");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: 0 80%;
   position: relative;
   
   &::after {
@@ -85,17 +123,43 @@ export const WelcomeSectionImage = styled.div`
     left: -20px;
     bottom: -20px;
   }
-  `;
+  ${({ theme }) => theme.mq.desktop} {
+    z-index: -1;
+    top: -80px;
+    height: 500px;
+    width: 80%;
+  }
+`;
 
 export const AdvantagesSection = styled(StyledSection)`
-
+  ${({ theme }) => theme.mq.desktop} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const ShowcaseSection = styled(StyledSection)`
   h2 {
     font-size: ${({ theme }) => theme.font.size.headingMobile};
     text-align: center;
-    margin: 30px 0;
+    margin: 30px 0 10px;
+  }
+  div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ${({ theme }) => theme.mq.desktop}  {
+    margin-top: -60px;
+    h2 {
+      margin: 0 0 30px;
+    }
+    div:nth-child(2) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
   }
 `;
 
@@ -114,11 +178,33 @@ export const StyledButton = styled.button`
   font-weight: 500;
   text-transform: uppercase;
   display: block;
-  margin: ${({ isCentered }) => (isCentered ? '15px auto' : '15px 0')};
-  `;
+  margin: 8px 15px;
+`;
 
 export const ShowcaseGallery = styled.div`
-  margin: 50px 0;  
+  margin: 25px 0 50px;  
+  ${({ theme }) => theme.mq.desktop } {    
+    margin: 50px 0 50px;  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 25px;
+    position: relative;
+    ${({ theme }) => theme.effect.corner({ position: 'topRight', size: '90px', distance: '30px', pseudoelement: 'after' })}
+    ${({ theme }) => theme.effect.corner({ position: 'bottomLeft', size: '90px', distance: '30px', pseudoelement: 'before', color: theme.color.beige })}
+    img:nth-child(1) {
+      grid-row: 1 / 2 ;
+    }
+    img:nth-child(2) {
+      grid-row: 1 / 3 ;
+    }
+    img:nth-child(3) {
+      grid-row: 2 / 4 ;
+    }
+    img:nth-child(4) {
+      grid-row: 3s / 4 ;
+    }
+  }
 `;
 
 export const ShowcaseImage = styled.img`
@@ -126,10 +212,10 @@ export const ShowcaseImage = styled.img`
   height: ${({ isBig }) => (isBig ? '250px' : '125px')};
   object-fit: cover;
   margin: 10px 0;
-  `;
-
-export const ServicesSection = styled(StyledSection)`
-    
+  ${({ theme }) => theme.mq.desktop} {
+    height: 100%;
+    margin: 0;
+  }
 `;
 
 export const StyledList = styled.ul`
@@ -143,19 +229,11 @@ export const StyledList = styled.ul`
       margin: 0;
     }
   }
-`;
-
-export const TeamSection = styled(StyledSection)``;
-
-export const TeamImage = styled.div`
-  margin-top: 30px;
-  width: 90%;
-  height: 300px;
-  position: relative;  
-  background-image: url("${({ imageSource }) => imageSource}");
-  background-repeat: no-repeat;
-  background-size: cover;    
-  ${({ theme }) => theme.effect.corner({ position: 'bottomRight' })};
+  ${({ theme }) => theme.mq.desktop} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+  }
 `;
 
 export const StyledLinkButton = styled(Link)`
@@ -163,7 +241,9 @@ export const StyledLinkButton = styled(Link)`
   font-size: ${({ theme }) => theme.font.size.paragraph};
   color: ${({ theme }) => theme.color.dark};
   text-decoration: underline;
-  position: relative;  
+  position: relative;
+  display: inline-block;  
+  margin: 5px 0 10px;
   &::after {
     position: absolute;
     content: '';
@@ -179,7 +259,97 @@ export const StyledLinkButton = styled(Link)`
   }
 `;
 
-export const ReviewSection = styled(StyledSection)``;
+
+export const ServicesSection = styled(StyledSection)`
+  ${({ theme }) => theme.mq.desktop}  {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 0 50px;
+    & > p {
+      align-self: center;
+      max-width: 450px;
+
+    }
+    ${StyledList} {
+      grid-row: 2 / 2;
+      grid-column: 1 / 3;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      align-content: center;
+    }
+  }
+`;
+
+export const TeamImage = styled.div`
+  margin-top: 30px;
+  width: 90%;
+  height: 300px;
+  position: relative;  
+  background-image: url("${({ imageSource }) => imageSource}");
+  background-repeat: no-repeat;
+  background-size: cover;    
+  ${({ theme }) => theme.effect.corner({ position: 'bottomRight' })};
+`;
+
+export const TeamSection = styled(StyledSection)`
+  ${TeamImage}:last-child {
+    display: none;
+  }
+  ${({ theme }) => theme.mq.desktop } {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    grid-gap: 50px;
+
+    ${TeamImage}:nth-child(2) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      width: 50%;
+      justify-self: end;
+      ${({ theme }) => theme.effect.corner({ position: 'bottomLeft', size: '100px', distance: '30px'})};
+    }
+
+    ${TeamImage}:last-child {
+      height: 100%;
+      grid-row: 1 / 3;
+      grid-column: 2 / 3;
+      display: block;
+      ${({ theme }) => theme.effect.corner({ position: 'topRight', color: theme.color.beige, size: '100px', distance: '30px'})};
+    }
+  }
+`;
+
+export const ReviewSection = styled(StyledSection)`
+  ${({ theme }) => theme.mq.desktop} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 100px;
+    div:first-child {      
+      grid-row: 1 / 1;
+      grid-column: 2 / 3;
+      align-self: center;
+      h2 {
+        max-width: 300px;
+        margin: 0;
+      }
+    }
+    dov:last-child {
+      grid-row: 1 / 1;
+      grid-column: 1 / 2;      
+    }
+  }
+`;
+
+export const StyledReview = styled.div`
+  border: 1px solid ${({ theme }) => theme.color.steel};
+  padding: 40px 40px 20px;
+  margin: 3cap 0;
+  p:last-child {
+    margin-top: 30px;
+    font-weight: 700;
+  }
+`;
 
 export const ContactForm = styled.form`
   display: flex;
@@ -198,5 +368,13 @@ export const ContactForm = styled.form`
   }
   textarea {
     min-height: 200px;
+  }
+  ${({ theme }) => theme.mq.desktop} {
+    max-width: 400px;
+    margin: 0 auto 100px;
+    h2 { 
+      max-width: 300px;
+      margin: 30px auto;
+    }
   }
 `;

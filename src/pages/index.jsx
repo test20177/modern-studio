@@ -21,6 +21,7 @@ import {
   ReviewSection,
   ContactForm,
   TeamImage,
+  StyledReview
 } from '../assets/styles/pages/Homepage.styles';
 import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
 
@@ -50,8 +51,8 @@ const HomePage = ({ data }) => (
       </WelcomeSection>
 
       <AdvantagesSection>
-        <>Dlaczego szukasz właśnie nas?</>
-        <>
+        <HighlightedHeading>Dlaczego szukasz właśnie nas?</HighlightedHeading>
+        <StyledList>
           <li>
             <h3>
               Kompleksowa obsługa
@@ -76,7 +77,7 @@ const HomePage = ({ data }) => (
             Doskonale rozumiemy Twoje potrzeby. Jesteśmy zespołem o zróżnicowanych kompetencjach, dzięki którym świetnie się uzupełniamy.
             </p>
           </li>
-        </>
+        </StyledList>
       </AdvantagesSection>
       <ShowcaseSection>
         <h2>Oferta</h2>
@@ -84,19 +85,21 @@ const HomePage = ({ data }) => (
           <StyledButton isCentered>Bieżące oferty</StyledButton>
           <StyledButton isCentered>Nasze realizacje</StyledButton>
         </ShowcaseButtonContainer>
-        <ShowcaseGallery>
+        <>
           <ShowcaseImage src={data.grid1.publicURL} alt="#" />
           <ShowcaseImage isBig src={data.grid2.publicURL} alt="#" />
           <ShowcaseImage src={data.grid3.publicURL} alt="#" />
           <ShowcaseImage isBig src={data.grid4.publicURL} alt="#" />
-        </ShowcaseGallery>
+        </>
       </ShowcaseSection>
       <ServicesSection>
-        <HighlightedHeading>Twój komfort ponad wszystko</HighlightedHeading>
+        <div>
+          <HighlightedHeading>Twój komfort ponad wszystko</HighlightedHeading>
+          <StyledLinkButton>Sprawdź pełen zakres naszych usług</StyledLinkButton>
+        </div>
         <p>
           To co dla innych biur nieruchomości wykracza poza zakres usług, dla nas jest standardem. Wyróżnia nas bezkompromisowa troska o interes klienta.
         </p>
-        <StyledButton>Sprawdź pełen zakres naszych usług</StyledButton>
         <StyledList>
           <li>
             <h3>Pośrednictwo</h3>
@@ -125,32 +128,40 @@ const HomePage = ({ data }) => (
         </StyledList>
       </ServicesSection>
       <TeamSection>
-        <p>
-          Dzięki doskonałej współpracy i przyjacielskiej atmosferze udało nam się stworzyć zespół doskonały
-        </p>
-        <StyledLinkButton>Sprawdź kim jesteśmy</StyledLinkButton>
+        <div>
+          <HighlightedHeading>Poznaj nasz zespół</HighlightedHeading>
+          <p>
+            Dzięki doskonałej współpracy i przyjacielskiej atmosferze udało nam się stworzyć zespół doskonały
+          </p>
+          <StyledLinkButton>Sprawdź kim jesteśmy</StyledLinkButton>
+        </div>
         <TeamImage imageSource={data.team1.publicURL} alt="" />
+        <TeamImage imageSource={data.team2.publicURL} alt="" />
       </TeamSection>
       <ReviewSection>
-        <HighlightedHeading>
-          Co mówią o nas nasi klienci?
-        </HighlightedHeading>
-        <p>
-          Bezkompromisowo wspieramy naszych klientów a ich satysfakcja jest dla nas najważniejszym celem
-        </p>
         <div>
+          <HighlightedHeading>
+            Co mówią o nas nasi klienci?
+          </HighlightedHeading>
           <p>
-            Witam. Jesteśmy bardzo zadowoleni z wyboru agencji nieruchomości. Co  mnie zaskoczyło: pełen profesjonalizm, pełna obsługa a co najważniejsze  miła atmosfera! 
+            Bezkompromisowo wspieramy naszych klientów a ich satysfakcja jest dla nas najważniejszym celem
           </p>
-          <p>Katarzyna</p>
         </div>
         <div>
-          <p>
-            Dziękuje pracownikom biura za fachową oraz  kompleksową pomoc przy sprzedaży mojego mieszkania. Współpraca z tym biurem to czysta przyjemność.
-          </p>
-          <p>
-            Kamila
-          </p>
+          <StyledReview>
+            <p>
+              Witam. Jesteśmy bardzo zadowoleni z wyboru agencji nieruchomości. Co  mnie zaskoczyło: pełen profesjonalizm, pełna obsługa a co najważniejsze  miła atmosfera! 
+            </p>
+            <p>Katarzyna</p>
+          </StyledReview>
+          <StyledReview>
+            <p>
+              Dziękuje pracownikom biura za fachową oraz  kompleksową pomoc przy sprzedaży mojego mieszkania. Współpraca z tym biurem to czysta przyjemność.
+            </p>
+            <p>
+              Kamila
+            </p>
+          </StyledReview>
         </div>
       </ReviewSection>
       <ContactForm action="#">
