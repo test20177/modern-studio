@@ -11,6 +11,7 @@ import {
   ShowcaseSection,
   ShowcaseButtonContainer,
   StyledButton,
+  ShowcaseGallery,
   ShowcaseImage,
   ServicesSection,
   StyledList,
@@ -84,12 +85,12 @@ const HomePage = ({ data }) => (
           <StyledButton isCentered>Bieżące oferty</StyledButton>
           <StyledButton isCentered>Nasze realizacje</StyledButton>
         </ShowcaseButtonContainer>
-        <>
+        <ShowcaseGallery>
           <ShowcaseImage src={data.grid1.publicURL} alt="#" />
           <ShowcaseImage isBig src={data.grid2.publicURL} alt="#" />
           <ShowcaseImage src={data.grid3.publicURL} alt="#" />
           <ShowcaseImage isBig src={data.grid4.publicURL} alt="#" />
-        </>
+        </ShowcaseGallery>
       </ShowcaseSection>
       <ServicesSection>
         <div>
