@@ -21,7 +21,7 @@ import {
   ContactForm,
   TeamImage,
   StyledReview
-} from '../assets/styles/pages/Homepage.styles';
+} from '../assets/styles/pages/homepage.styles';
 import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
 import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
 
