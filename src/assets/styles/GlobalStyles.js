@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 500;
     line-height: 1.2;
   }
-  p, li {
+  p, li, a {
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
     line-height: 1.5;

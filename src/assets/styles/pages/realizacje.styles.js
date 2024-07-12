@@ -9,8 +9,8 @@ export const IntroSection = styled.section`
     align-items: center;
     position: relative;
     div {
-      width: 50%;
       padding-right: 80px;
+      width: 50%;
     }
     img { 
       width: 50%; 
