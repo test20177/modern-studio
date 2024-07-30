@@ -13,8 +13,7 @@ import {
   StyledButton,
   ShowcaseGallery,
   ShowcaseImage,
-  ServicesSection,
-  StyledList,
+  ServicesSection,  
   TeamSection,
   StyledLinkButton,
   ReviewSection,
@@ -22,6 +21,7 @@ import {
   TeamImage,
   StyledReview
 } from '../assets/styles/pages/homepage.styles';
+import { StyledList } from '../components/StyledList/StyledList';
 import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
 import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
 
@@ -32,7 +32,6 @@ const HomePage = ({ data }) => (
       <HeroParagraph>Modern Studio to nowoczesne biuro nieruchomości z profesjonalnym i innowacyjnym podejściem do tematu nieruchomości i inwestycji.</HeroParagraph>
     </Hero>
     <ContentWrapper>
-
       <WelcomeSection>
         <WelcomeSectionContent>
           <h2>

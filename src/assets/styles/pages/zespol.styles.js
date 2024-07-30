@@ -22,6 +22,7 @@ export const Hero = styled.div`
   }
 
   ${({theme}) => theme.mq.desktop} {
+    height: ${({ theme }) => theme.size.desktopHeroHeight };
     width: calc(100% + 40px);
     margin-left: -20px;
   }
