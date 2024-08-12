@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import arrowIcon from '../arrow.svg';
 import { StyledList } from '../../../components/StyledList/StyledList';
+import { CornerEffect } from '../../../components/CornerEffectProvider/CornerEffect';
 
 export const Hero = styled.div`
   width: 100%;
@@ -55,7 +56,7 @@ export const WelcomeSection = styled(StyledSection)`
  }
 `;
 
-export const WelcomeSectionContent = styled.div`
+export const WelcomeSectionContent = styled(CornerEffect)`
   background-color: ${({ theme }) => theme.color.dark };
   padding: 30px 20px;
   position: relative;
@@ -67,16 +68,6 @@ export const WelcomeSectionContent = styled.div`
   p {
     color: white;    
     font-size: ${({ theme }) => theme.font.size.paragraph};    
-  }
-  &::after {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    content: '';
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 85% 100%, 85% 15%, 0 15%);
-    background-color: ${({ theme }) => theme.color.dark};
-    right: -20px;
-    top: -20px;
   }
   ${({ theme }) => theme.mq.desktop} {
     position: absolute;    
@@ -94,7 +85,7 @@ export const WelcomeSectionContent = styled.div`
   }
 `;
 
-export const WelcomeSectionImage = styled.div`  
+export const WelcomeSectionImage = styled(CornerEffect)`  
   width: 90%;
   height: 170px;
   margin-top: 10px;
@@ -105,16 +96,7 @@ export const WelcomeSectionImage = styled.div`
   background-position: 0 80%;
   position: relative;
   
-  &::after {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    content: '';    
-    clip-path: polygon(0 0, 15% 0, 15% 85%, 100% 85%, 100% 100%, 0 100%);    
-    background-color: ${({ theme }) => theme.color.beige};
-    left: -20px;
-    bottom: -20px;
-  }
+
   ${({ theme }) => theme.mq.desktop} {
     z-index: -1;
     top: -80px;
@@ -175,6 +157,7 @@ export const StyledButton = styled.button`
 
 export const ShowcaseGallery = styled.div`
   margin: 25px 0 50px;  
+  position: relative;
   ${({ theme }) => theme.mq.desktop } {    
     margin: 50px 0 50px;  
     display: grid;
@@ -182,8 +165,6 @@ export const ShowcaseGallery = styled.div`
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 25px;
     position: relative;
-    ${({ theme }) => theme.effect.corner({ position: 'topRight', size: '90px', distance: '30px', pseudoelement: 'after' })}
-    ${({ theme }) => theme.effect.corner({ position: 'bottomLeft', size: '90px', distance: '30px', pseudoelement: 'before', color: theme.color.beige })}
     img:nth-child(1) {
       grid-row: 1 / 2 ;
     }
@@ -197,6 +178,14 @@ export const ShowcaseGallery = styled.div`
       grid-row: 3s / 4 ;
     }
   }
+`;
+
+export const ShowcaseCorner = styled(CornerEffect)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;  
 `;
 
 export const ShowcaseImage = styled.img`
@@ -254,15 +243,14 @@ export const ServicesSection = styled(StyledSection)`
   }
 `;
 
-export const TeamImage = styled.div`
+export const TeamImage = styled(CornerEffect)`
   margin-top: 30px;
   width: 90%;
   height: 300px;
   position: relative;  
   background-image: url("${({ imageSource }) => imageSource}");
   background-repeat: no-repeat;
-  background-size: cover;    
-  ${({ theme }) => theme.effect.corner({ position: 'bottomRight' })};
+  background-size: cover;      
 `;
 
 export const TeamSection = styled(StyledSection)`
@@ -281,7 +269,6 @@ export const TeamSection = styled(StyledSection)`
       grid-row: 2 / 3;
       width: 50%;
       justify-self: end;
-      ${({ theme }) => theme.effect.corner({ position: 'bottomLeft', size: '100px', distance: '30px'})};
     }
 
     ${TeamImage}:last-child {
@@ -289,7 +276,6 @@ export const TeamSection = styled(StyledSection)`
       grid-row: 1 / 3;
       grid-column: 2 / 3;
       display: block;
-      ${({ theme }) => theme.effect.corner({ position: 'topRight', color: theme.color.beige, size: '100px', distance: '30px'})};
     }
   }
 `;

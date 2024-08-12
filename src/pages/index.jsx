@@ -19,7 +19,8 @@ import {
   ReviewSection,
   ContactForm,
   TeamImage,
-  StyledReview
+  StyledReview,
+  ShowcaseCorner
 } from '../assets/styles/pages/homepage.styles';
 import { StyledList } from '../components/StyledList/StyledList';
 import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
@@ -33,7 +34,7 @@ const HomePage = ({ data }) => (
     </Hero>
     <ContentWrapper>
       <WelcomeSection>
-        <WelcomeSectionContent>
+        <WelcomeSectionContent position="topRight" size="100px" distance="30px" offset="600">
           <h2>
             Obsługę nieruchomości
             wymyśliliśmy na nowo
@@ -46,11 +47,10 @@ const HomePage = ({ data }) => (
             Klienci wybierają nas ponieważ zakres naszych usłg wykracza poza to, co jest w stanie zaoferować konkurencja.
           </p>
         </WelcomeSectionContent>
-        <WelcomeSectionImage imageSource={data.welcome.publicURL} />
+        <WelcomeSectionImage position="bottomRight" color="beige" distnce="30px" size="150px" distance="30px" imageSource={data.welcome.publicURL} />
       </WelcomeSection>
-
       <AdvantagesSection>
-        <HighlightedHeading>Dlaczego szukasz właśnie nas?</HighlightedHeading>
+        <HighlightedHeading width="100" isRight>Dlaczego szukasz właśnie nas?</HighlightedHeading>
         <StyledList>
           <li>
             <h3>
@@ -89,11 +89,13 @@ const HomePage = ({ data }) => (
           <ShowcaseImage isBig src={data.grid2.publicURL} alt="#" />
           <ShowcaseImage src={data.grid3.publicURL} alt="#" />
           <ShowcaseImage isBig src={data.grid4.publicURL} alt="#" />
+          <ShowcaseCorner position='bottomLeft' size="100px" distance="30px" color="beige" />
+          <ShowcaseCorner position='topRight' size="100px" distance="30px" color="beige" />
         </ShowcaseGallery>
       </ShowcaseSection>
       <ServicesSection>
         <div>
-          <HighlightedHeading>Twój komfort ponad wszystko</HighlightedHeading>
+          <HighlightedHeading width="55">Twój komfort ponad wszystko</HighlightedHeading>
           <StyledLinkButton>Sprawdź pełen zakres naszych usług</StyledLinkButton>
         </div>
         <p>
@@ -128,18 +130,18 @@ const HomePage = ({ data }) => (
       </ServicesSection>
       <TeamSection>
         <div>
-          <HighlightedHeading>Poznaj nasz zespół</HighlightedHeading>
+          <HighlightedHeading isRight width="60">Poznaj nasz zespół</HighlightedHeading>
           <p>
             Dzięki doskonałej współpracy i przyjacielskiej atmosferze udało nam się stworzyć zespół doskonały
           </p>
           <StyledLinkButton>Sprawdź kim jesteśmy</StyledLinkButton>
         </div>
-        <TeamImage imageSource={data.team1.publicURL} alt="" />
-        <TeamImage imageSource={data.team2.publicURL} alt="" />
+        <TeamImage offset="700" position="bottomLeft" size="70px" distance="20px" color="beige" imageSource={data.team1.publicURL} alt="" />
+        <TeamImage position="topRight" size="70px" distance="20px" color="dark" imageSource={data.team2.publicURL} alt="" />
       </TeamSection>
       <ReviewSection>
         <div>
-          <HighlightedHeading>
+          <HighlightedHeading width="70">
             Co mówią o nas nasi klienci?
           </HighlightedHeading>
           <p>
@@ -149,13 +151,16 @@ const HomePage = ({ data }) => (
         <div>
           <StyledReview>
             <p>
-              Witam. Jesteśmy bardzo zadowoleni z wyboru agencji nieruchomości. Co  mnie zaskoczyło: pełen profesjonalizm, pełna obsługa a co najważniejsze  miła atmosfera! 
+              Witam. Jesteśmy bardzo zadowoleni z wyboru agencji nieruchomości. Co  mnie 
+              zaskoczyło: pełen profesjonalizm, pełna obsługa a co najważniejsze miła 
+              atmosfera!
             </p>
             <p>Katarzyna</p>
           </StyledReview>
           <StyledReview>
             <p>
-              Dziękuje pracownikom biura za fachową oraz  kompleksową pomoc przy sprzedaży mojego mieszkania. Współpraca z tym biurem to czysta przyjemność.
+              Dziękuje pracownikom biura za fachową oraz  kompleksową pomoc przy sprzedaży 
+              mojego mieszkania. Współpraca z tym biurem to czysta przyjemność.
             </p>
             <p>
               Kamila
@@ -164,7 +169,7 @@ const HomePage = ({ data }) => (
         </div>
       </ReviewSection>
       <ContactForm action="#">
-        <HighlightedHeading>Napisz do nas</HighlightedHeading>
+        <HighlightedHeading isRight width="60">Napisz do nas</HighlightedHeading>
         <label htmlFor="email">Adres e-mail</label>
         <input type="text" name="email" id="email" placeholder="Adres e-mail" />
         <label htmlFor="message">Treść</label>

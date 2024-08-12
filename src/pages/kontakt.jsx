@@ -27,7 +27,7 @@ const Kontakt = ({ data }) => (
       <textarea name="message" id="message" placeholder="Wiadomość" />
       <StyledButton>Wyślij</StyledButton>
     </ContactForm>
-    <ContactPhoto imageSource={data.hero.publicURL} />
+    <ContactPhoto offset="2000" position="bottomLeft" size="100px" distance="30px" color="steel" imageSource={data.hero.publicURL} />
     <h1>Kontakt</h1>
   </ContactContentWrapper>
 );
