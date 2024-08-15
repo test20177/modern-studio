@@ -4,13 +4,14 @@ import {
   ThumbnailImage,
   ThumnailInfo,
 } from './Thumbnail.styles';
+import { getPageSlug } from '../../helpers/getPageSlug';
 
-export const Thumbnail = ({ imageSource }) => (
-  <ThumbnailWrapper>
+export const Thumbnail = ({ imageSource = '', title = '', address = '' }) => (
+  <ThumbnailWrapper to={getPageSlug(address)}>
     <ThumbnailImage src={imageSource} alt="" />
     <ThumnailInfo>
-      <p>Rolna 20</p>
-      <p>Nowoczesny apartament z klasą</p>
+      <p>{title}</p>
+      <p>{address}</p>
     </ThumnailInfo>
   </ThumbnailWrapper>
 );

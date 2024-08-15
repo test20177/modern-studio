@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-export const ThumbnailWrapper = styled.div`
+export const ThumbnailWrapper = styled(Link)`
   width: 100%;
   height: 30vw;
   min-height: 450px;
@@ -19,6 +20,7 @@ export const ThumbnailImage = styled.img`
   left: 0;
   object-position: left bottom;
   z-index: -1;
+  filter: brightness(0.7);
 `;
 
 export const ThumnailInfo = styled.div`
