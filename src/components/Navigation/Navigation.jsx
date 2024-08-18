@@ -2,8 +2,9 @@ import { Link } from 'gatsby';
 import React, { useState} from 'react';
 import FacebookIcon from '../../assets/icons/facebook.svg';
 import InstagramIcon from '../../assets/icons/instagram.svg';
+import { StyledSocialIcon } from '../SocialIcon/SocialIcon.styles';
+import { OuterWrapper, StyledLogo, StyledBurger, Wrapper, StyledNavigation} from './Navigation.styles';
 
-import { OuterWrapper, StyledLogo, StyledBurger, Wrapper, StyledNavigation, StyledSocialIcon} from './Navigation.styles';
 
 export const Navigation = () => {
 

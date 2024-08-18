@@ -16,6 +16,7 @@ module.exports = {
         spaceId: 'jb7ok5s4hzwn',
       },
     },
+    'gatsby-transformer-remark',
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -68,8 +69,8 @@ module.exports = {
       options: {
         rule: {
           include: /assets/,
-        }
-      }
-    }
+        },
+      },
+    },
   ],
 };

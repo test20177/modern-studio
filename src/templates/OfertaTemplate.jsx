@@ -1,4 +1,6 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import { Carousel } from 'react-responsive-carousel';
 import {
   StyledContentWrapper,
   OfferTitle, Address,
@@ -13,7 +15,13 @@ import AreaIcon from '../assets/icon-components/area.svg';
 import AvaiabilityIcon from '../assets/icon-components/avaiability.svg';
 import OfferTypeIcon from '../assets/icon-components/offer-type.svg';
 import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
-import { graphql } from 'gatsby';
+import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+
+const galleryOptions = {
+  showStatus: false,
+  showThumbs: false,
+  infiniteLoop: true,
+};
 
 const OfertaTemplate = ({ data: { oferta, avatar } }) => (
   <StyledContentWrapper>
@@ -21,8 +29,19 @@ const OfertaTemplate = ({ data: { oferta, avatar } }) => (
       <Address>{oferta.adres}</Address>
       <HighlightedHeading>{oferta.tytul}</HighlightedHeading>
     </OfferTitle>
-    <Gallery><img src={oferta.galeria[0].file.url} alt="" /></Gallery>
-    <OfferDescription>{oferta.opis.opis}</OfferDescription>
+    <Gallery>
+      <Carousel {...galleryOptions}>
+        {
+          oferta.galeria.map((item) => (
+            <img src={item.file.url} alt="" />
+          ))
+        }
+      </Carousel>
+    </Gallery>
+    <OfferDescription
+      dangerouslySetInnerHTML={{
+        __html: oferta.opis.childMarkdownRemark.html,
+      }} />
     <OfferDetailsList>
       <li>
         <BuildingTypeIcon />
@@ -83,7 +102,9 @@ export const query = graphql`
       kontakt
       dostepnosc
       opis {
-        opis
+        childMarkdownRemark {
+          html
+        }
       }
       galeria {
         file {

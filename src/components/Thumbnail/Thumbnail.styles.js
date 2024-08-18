@@ -9,6 +9,7 @@ export const ThumbnailWrapper = styled(Link)`
   position: relative;
   display: flex;
   align-items: flex-end;
+  text-decoration: none;
 `;
 
 export const ThumbnailImage = styled.img`
