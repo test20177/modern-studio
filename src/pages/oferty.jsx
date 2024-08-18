@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
-import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
+import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
 import { 
   ContentInfo,
   FiltersList,
   Gallery,
-} from '../assets/styles/pages/oferty.styles';
-import { Thumbnail } from '../components/Thumbnail/Thumbnail';
+} from 'assets/styles/pages/oferty.styles';
+import { Thumbnail } from 'components/Thumbnail/Thumbnail';
 
 
 const Oferty = ({ data: { oferty: { nodes: oferty }} }) => (

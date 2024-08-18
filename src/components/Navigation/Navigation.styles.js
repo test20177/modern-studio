@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import Logo from '../../assets/icons/logo.svg';
+import Logo from 'assets/icons/logo.svg';
 import { StyledIcon } from '../StyledIcon/StyledIcon';
 
 export const OuterWrapper = styled.div`
@@ -13,6 +12,23 @@ export const OuterWrapper = styled.div`
   position: absolute;
   top: 0;
   z-index: 1000;
+`;
+
+export const StyledSocialIcon = styled(StyledIcon)`
+  display: inline-block;
+  margin: 0 20px;
+  width: 50px;
+  height: 50px;
+  
+  svg {
+    width: 100%;
+  }
+  
+  ${({ theme }) => theme.mq.desktop} {
+    width: 25px;
+    height: 25px;
+    margin: 0 15px;
+  }
 `;
 
 export const StyledBurger = styled.button`

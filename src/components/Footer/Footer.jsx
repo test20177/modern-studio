@@ -1,9 +1,8 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { StyledFooter } from './Footer.styles';
-import { StyledSocialIcon } from '../Navigation/Navigation.styles';
-import FacebookIcon from '../../assets/icons/facebook.svg';
-import InstagramIcon from '../../assets/icons/instagram.svg';
+import FacebookIcon from 'assets/icons/facebook.svg';
+import InstagramIcon from 'assets/icons/instagram.svg';
 import { StyledIcon } from '../StyledIcon/StyledIcon';
 
 export const Footer = () => (

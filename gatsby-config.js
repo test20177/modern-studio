@@ -46,14 +46,15 @@ module.exports = {
       },
       __key: 'images',
     },
-    {
-      resolve: 'gatsby-plugin-root-import',
-      options: {
-        assets: path.join(__dirname, 'src', 'assets'),
-        components: path.join(__dirname, 'src', 'components'),
-        helpers: path.join(__dirname, 'src', 'helpers'),
-      },
-    },
+    'gatsby-plugin-root-import',
+    // {
+    //   resolve: 'gatsby-plugin-root-import',
+    //   options: {
+    //     assets: path.join(__dirname, 'src', 'assets'),
+    //     components: path.join(__dirname, 'src', 'components'),
+    //     helpers: path.join(__dirname, 'src', 'helpers'),
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {

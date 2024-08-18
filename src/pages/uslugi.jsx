@@ -1,16 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import PeopleIcon from '../assets/icon-components/people.svg';
-import ConsultancyIcon from '../assets/icon-components/consultancy.svg';
-import HeartIcon from '../assets/icon-components/heart.svg';
-import BlocksIcon from '../assets/icon-components/blocks.svg';
-import SuitcaseIcon from '../assets/icon-components/suitcase.svg';
-import KeyIcon from '../assets/icon-components/key.svg';
+import PeopleIcon from 'assets/icon-components/people.svg';
+import ConsultancyIcon from 'assets/icon-components/consultancy.svg';
+import HeartIcon from 'assets/icon-components/heart.svg';
+import BlocksIcon from 'assets/icon-components/blocks.svg';
+import SuitcaseIcon from 'assets/icon-components/suitcase.svg';
+import KeyIcon from 'assets/icon-components/key.svg';
 
-import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
+import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
 
-import { Hero, HeroImage, HeroInfo, ServicesStyledList } from '../assets/styles/pages/uslugi.styles';
+import { Hero, HeroImage, HeroInfo, ServicesStyledList } from 'assets/styles/pages/uslugi.styles';
 
 const Uslugi = ({ data }) => (
   <ContentWrapper>

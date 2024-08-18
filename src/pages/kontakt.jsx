@@ -1,11 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import PhoneIcon from '../assets/icon-components/phone.svg';
-import { ContactForm, StyledButton } from '../assets/styles/pages/homepage.styles';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
-import { ContactContentWrapper, ContactInfoWrapper, ContactPhoto } from '../assets/styles/pages/kontakt.styles';
+import PhoneIcon from 'assets/icon-components/phone.svg';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
+import { ContactContentWrapper, ContactInfoWrapper, ContactPhoto } from 'assets/styles/pages/kontakt.styles';
 
-const Kontakt = ({ data }) => (
+import { ContactForm } from 'components/ContactForm/ContactForm';
+
+const Kontakt = () => (
+  
   <ContactContentWrapper isSubpage>
     <ContactInfoWrapper>
       <HighlightedHeading>Kontakt</HighlightedHeading>
@@ -19,19 +21,11 @@ const Kontakt = ({ data }) => (
         730 026 439
       </a>
     </ContactInfoWrapper>
-    <ContactForm action="#">
-      <HighlightedHeading>Napisz do nas</HighlightedHeading>
-      <label htmlFor="email">Adres e-mail</label>
-      <input type="text" name="email" id="email" placeholder="Adres e-mail" />
-      <label htmlFor="message">Treść</label>
-      <textarea name="message" id="message" placeholder="Wiadomość" />
-      <StyledButton>Wyślij</StyledButton>
-    </ContactForm>
+    <ContactForm />
     <ContactPhoto offset="2000" position="bottomLeft" size="100px" distance="30px" color="steel" imageSource={data.hero.publicURL} />
     <h1>Kontakt</h1>
   </ContactContentWrapper>
 );
-
 
 export const query = graphql`
   query {

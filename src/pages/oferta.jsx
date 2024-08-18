@@ -1,11 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
-import AreaIcon from '../assets/icon-components/area.svg';
-import AvaiabilityIcon from '../assets/icon-components/avaiability.svg';
-import BuildingTypeIcon from '../assets/icon-components/building-type.svg';
-import OfferTypeIcon from '../assets/icon-components/offer-type.svg';
-import RoomsIcon from '../assets/icon-components/rooms.svg';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
+import AreaIcon from 'assets/icon-components/area.svg';
+import AvaiabilityIcon from 'assets/icon-components/avaiability.svg';
+import BuildingTypeIcon from 'assets/icon-components/building-type.svg';
+import OfferTypeIcon from 'assets/icon-components/offer-type.svg';
+import RoomsIcon from 'assets/icon-components/rooms.svg';
 import {
   StyledContentWrapper,
   OfferTitle,
@@ -13,8 +13,8 @@ import {
   Gallery,
   OfferDescription,
   OfferDetailsList,
-  ContactDetails,
-} from '../assets/styles/pages/oferta.styles';
+} from 'assets/styles/pages/oferta.styles';
+import { ContactDetails } from 'components/ContactDetails/ContactDetails';
 
 const Oferta = ({ data }) => (
   <StyledContentWrapper isSubpage>
@@ -64,16 +64,7 @@ const Oferta = ({ data }) => (
         </div>
       </li>
     </OfferDetailsList>
-    <ContactDetails>
-      <img src={data.avatar.publicURL} alt="" />
-      <div>
-        <p>Kontakt:</p>
-        <p>Anna Żarczyńska</p>
-        <p>ania@msnieruchomości.pl</p>
-        <p>730 026 439</p>
-
-      </div>
-    </ContactDetails>
+    <ContactDetails />
   </StyledContentWrapper>
 );
 

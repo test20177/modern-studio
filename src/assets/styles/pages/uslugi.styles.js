@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import arrowIcon from '../../styles/arrow.svg';
-import { StyledList } from '../../../components/StyledList/StyledList';
+import { StyledList } from 'components/StyledList/StyledList';
 
 export const Hero = styled.div`
   position: relative;

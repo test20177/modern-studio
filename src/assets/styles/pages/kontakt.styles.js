@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { ContactForm } from './homepage.styles';
-import { ContentWrapper } from '../../../components/ContentWrapper/ContentWrapper.styles';
-import { CornerEffect } from '../../../components/CornerEffectProvider/CornerEffect';
+import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
+import { CornerEffect } from 'components/CornerEffectProvider/CornerEffect';
+import { ContactFormWrapper } from 'components/ContactForm/ContactForm.styles';
 
 export const ContactInfoWrapper = styled.section`
   a {
@@ -24,18 +24,18 @@ export const ContactPhoto = styled(CornerEffect)`
   }
 `;
 
-export const ContactContentWrapper = styled(ContentWrapper)`
+export const ContactContentWrapper = styled(ContentWrapper)`    
   ${({ theme }) => theme.mq.desktop } {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0 80px;
 
-    ${ContactForm} {
+    ${ContactFormWrapper} {
       width: 100%;
       margin: 0;
     }
   
-    ${ContactForm}, ${ContactInfoWrapper} {
+    ${ContactFormWrapper}, ${ContactInfoWrapper} {
       grid-column: 1 / 2;
     }
   

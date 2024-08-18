@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { ContentWrapper } from '../../../components/ContentWrapper/ContentWrapper.styles';
+import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
+import { ContactDetails } from 'components/ContactDetails/ContactDetails';
 
 export const Address = styled.p`
   font-weight: 700;
@@ -49,22 +50,6 @@ export const OfferDescription = styled.p`
   }
 `;
 
-export const ContactDetails = styled.div`
-  display: flex;
-  margin-bottom: 50px;
-  img {
-    width: 100px;
-    height: 100px;
-    margin-right: 20px;
-  }
-  p {
-    margin: 0;
-  }
-  p:first-child {
-    font-weight: 700;
-  }
-`;
-
 export const Gallery = styled.div`
   width: 100%;
 `;
@@ -72,7 +57,7 @@ export const Gallery = styled.div`
 export const StyledContentWrapper = styled(ContentWrapper)`
   display: grid;
   grid-template-columns: 1fr;
-  ${({theme}) => theme.mq.desktop} {
+  ${({ theme }) => theme.mq.desktop} {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 40px;
     ${Gallery} {

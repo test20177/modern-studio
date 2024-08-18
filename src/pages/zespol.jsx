@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
-import EmailIcon from '../assets/icon-components/email.svg';
-import PhoneIcon from '../assets/icon-components/phone.svg';
-import { Hero, InfoItem, InfoItemContent } from '../assets/styles/pages/zespol.styles'; 
+import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
+import EmailIcon from 'assets/icon-components/email.svg';
+import PhoneIcon from 'assets/icon-components/phone.svg';
+import { Hero, InfoItem, InfoItemContent } from 'assets/styles/pages/zespol.styles'; 
 
 const Zespol = ({ data }) => (
   <ContentWrapper isSubpage>

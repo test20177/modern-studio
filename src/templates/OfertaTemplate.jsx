@@ -7,14 +7,14 @@ import {
   Gallery,
   OfferDescription,
   OfferDetailsList,
-  ContactDetails,
-} from '../assets/styles/pages/oferta.styles';
-import BuildingTypeIcon from '../assets/icon-components/building-type.svg';
-import RoomsIcon from '../assets/icon-components/rooms.svg';
-import AreaIcon from '../assets/icon-components/area.svg';
-import AvaiabilityIcon from '../assets/icon-components/avaiability.svg';
-import OfferTypeIcon from '../assets/icon-components/offer-type.svg';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
+} from 'assets/styles/pages/oferta.styles';
+import { ContactDetails } from 'components/ContactDetails/ContactDetails';
+import BuildingTypeIcon from 'assets/icon-components/building-type.svg';
+import RoomsIcon from 'assets/icon-components/rooms.svg';
+import AreaIcon from 'assets/icon-components/area.svg';
+import AvaiabilityIcon from 'assets/icon-components/avaiability.svg';
+import OfferTypeIcon from 'assets/icon-components/offer-type.svg';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 
 const galleryOptions = {
@@ -79,15 +79,7 @@ const OfertaTemplate = ({ data: { oferta, avatar } }) => (
         </div>
       </li>
     </OfferDetailsList>
-    <ContactDetails>
-      <img src={avatar.publicURL} alt="" />
-      <div>
-        <p>Kontakt:</p>
-        <p>Anna Żarczyńska</p>
-        <p>ania@msnieruchomości.pl</p>
-        <p>730 026 439</p>
-      </div>
-    </ContactDetails>
+    <ContactDetails contact={oferta.kontakt}/>
   </StyledContentWrapper>
 );
 

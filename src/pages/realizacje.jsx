@@ -1,14 +1,14 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import { throttle } from 'lodash';
-import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
-import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
-import { IntroSection, PortfolioItem } from '../assets/styles/pages/realizacje.styles';
-import { CornerEffect } from '../components/CornerEffectProvider/CornerEffect';
+import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
+import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
+import { IntroSection, PortfolioItem } from 'assets/styles/pages/realizacje.styles';
+import { CornerEffect } from 'components/CornerEffectProvider/CornerEffect';
 
 const Realizacje = ({ data }) => {
 
-  const [ playState, setPlayState ] = useState(false)
+  const [ playState, setPlayState ] = useState(false);
 
   const handlePlayStateChange = () => throttle( () => {
     const { top } = headingRef.current.getBoundingClientRect()
