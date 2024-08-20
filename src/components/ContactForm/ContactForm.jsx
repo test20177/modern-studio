@@ -33,10 +33,10 @@ export const ContactForm = () => {
         <p key={e.message}>{(e.code === 'EMPTY') && 'Uzupełnij pola przed wysłaniem wiadomości'}</p>
       ) : null }
       { state.succeeded
-          ? <p>Dziękujemy za wiadmość!</p>
-          : null
+        ? <p>Dziękujemy za wiadmość!</p>
+        : null
       }
       <StyledButton type="submit" disabled={state.submitting}>Wyślij</StyledButton>
     </ContactFormWrapper>
-  )
+  );
 }
