@@ -6,7 +6,7 @@ import { ContactContentWrapper, ContactInfoWrapper, ContactPhoto } from 'assets/
 
 import { ContactForm } from 'components/ContactForm/ContactForm';
 
-const Kontakt = () => (
+const Kontakt = ({ data }) => (
   
   <ContactContentWrapper isSubpage>
     <ContactInfoWrapper>

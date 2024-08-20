@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { ContactFormWrapper } from './ContactForm.styles';
 import { HighlightedHeading } from '../HighlightedHeading/HighlightedHeading';
-// import { StyledButton } from '../../assets/styles/pages/homepage.styles';
+import { StyledButton } from '../../assets/styles/pages/homepage.styles';
 
 export const ContactForm = () => {
 
@@ -36,7 +36,7 @@ export const ContactForm = () => {
           ? <p>Dziękujemy za wiadmość!</p>
           : null
       }
-      {/* <StyledButton type="submit" disabled={state.submitting}>Wyślij</StyledButton> */}
+      <StyledButton type="submit" disabled={state.submitting}>Wyślij</StyledButton>
     </ContactFormWrapper>
   )
 }

@@ -1,11 +1,10 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
-import { Link } from 'gatsby';
-import { ContactForm } from 'components/ContactForm/ContactForm';
-import { StyledList } from 'components/StyledList/StyledList';
-import { ContentWrapper } from 'components/ContentWrapper/ContentWrapper.styles';
-import { HighlightedHeading } from 'components/HighlightedHeading/HighlightedHeading';
-import { 
+import { graphql, Link } from 'gatsby';
+import { StyledList } from '../components/StyledList/StyledList';
+import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
+import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
+import { ContactForm } from '../components/ContactForm/ContactForm';
+import {
   Hero,
   HeroHeading,
   WelcomeSection,
