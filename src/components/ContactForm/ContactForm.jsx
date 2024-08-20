@@ -1,8 +1,8 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { ContactFormWrapper } from './ContactForm.styles';
-// import { HighlightedHeading } from '../HighlightedHeading/HighlightedHeading';
-// import { StyledButton } from '../../assets/styles/pages/homepage.styles';
+import { HighlightedHeading } from '../HighlightedHeading/HighlightedHeading';
+import { StyledButton } from '../../assets/styles/pages/homepage.styles';
 
 export const ContactForm = () => {
   const [state, handleSubmit] = useForm('xdknlonq');
@@ -13,7 +13,7 @@ export const ContactForm = () => {
 
   return (
     <ContactFormWrapper onSubmit={handleSubmit}>
-      {/* <HighlightedHeading>Napisz do nas</HighlightedHeading>
+      <HighlightedHeading>Napisz do nas</HighlightedHeading>
       <label htmlFor="email">Adres e-mail</label>
       <input type="text" name="email" id="email" placeholder="Adres e-mail" />
       <ValidationError
@@ -32,7 +32,7 @@ export const ContactForm = () => {
       { state.succeeded
         ? <p>Dziękujemy za wiadmość!</p>
         : null}
-      <StyledButton type="submit" disabled={state.submitting}>Wyślij</StyledButton> */}
+      <StyledButton type="submit" disabled={state.submitting}>Wyślij</StyledButton>
     </ContactFormWrapper>
   );
 }
