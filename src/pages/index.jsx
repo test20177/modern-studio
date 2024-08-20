@@ -4,30 +4,30 @@ import { StyledList } from '../components/StyledList/StyledList';
 import { ContentWrapper } from '../components/ContentWrapper/ContentWrapper.styles';
 import { HighlightedHeading } from '../components/HighlightedHeading/HighlightedHeading';
 import { ContactForm } from '../components/ContactForm/ContactForm';
-// import {
-//   Hero,
-//   HeroHeading,
-//   WelcomeSection,
-//   WelcomeSectionContent,
-//   WelcomeSectionImage,
-//   AdvantagesSection,
-//   ShowcaseSection,
-//   StyledButton,
-//   ShowcaseGallery,
-//   ShowcaseImage,
-//   ServicesSection,
-//   TeamSection,
-//   StyledLinkButton,
-//   ReviewsSection,
-//   TeamImage,
-//   StyledReview,
-//   ShowcaseCorner,
-// } from '../assets/styles/pages/homepage.styles';
+import {
+  Hero,
+  HeroHeading,
+  WelcomeSection,
+  WelcomeSectionContent,
+  WelcomeSectionImage,
+  AdvantagesSection,
+  ShowcaseSection,
+  StyledButton,
+  ShowcaseGallery,
+  ShowcaseImage,
+  ServicesSection,
+  TeamSection,
+  StyledLinkButton,
+  ReviewsSection,
+  TeamImage,
+  StyledReview,
+  ShowcaseCorner,
+} from '../assets/styles/pages/homepage.styles';
 import { HeroImage } from '../assets/styles/pages/uslugi.styles';
 
 const HomePage = ({ data }) => (
   <ContentWrapper>
-    {/* <Hero>
+    <Hero>
       <HeroHeading position="bottomLeft" color="dark" size="100px" distance="30px">
         <h1>Biuro nieruchomości, którego potrzebujesz</h1>
         <p>Sprawdź, co oznacza dla nas bezkonkurencyjność.</p>
@@ -177,7 +177,7 @@ const HomePage = ({ data }) => (
         </StyledReview>
       </div>
     </ReviewsSection>
-    <ContactForm /> */}
+    <ContactForm />
   </ContentWrapper>
 );
 
