@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
   }
   
-  h1,h2,h3,h4,h5,h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: "Cormorant Garamond", serif;
     font-weight: 500;
     line-height: 1.2;

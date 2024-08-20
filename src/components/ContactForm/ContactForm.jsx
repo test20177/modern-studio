@@ -1,7 +1,7 @@
 import React from 'react';
 import { ContactFormWrapper } from './ContactForm.styles';
 import { HighlightedHeading } from '../HighlightedHeading/HighlightedHeading';
-import { StyledButton } from 'assets/styles/pages/homepage.styles';
+import { StyledButton } from  '../../assets/styles/pages/homepage.styles';
 import { useForm, ValidationError } from '@formspree/react';
 
 export const ContactForm = () => {
@@ -11,7 +11,6 @@ export const ContactForm = () => {
   if (state.succeeded) {
     return <p>Thanks for joining!</p>;
   }
-
 
   return (
     <ContactFormWrapper onSubmit={handleSubmit}>
@@ -25,27 +24,19 @@ export const ContactForm = () => {
       />
       <label htmlFor="message">Treść</label>
       <textarea name="message" id="message" placeholder="Wiadomość" />
-
       <ValidationError 
         prefix="Message" 
         field="message"
         errors={state.errors}
       />
-
-      {state.errors?.length ? state.errors.map( e => 
+      {state.errors?.length ? state.errors.map( e =>
         <p key={e.message}>{(e.code === 'EMPTY') && 'Uzupełnij pola przed wysłaniem wiadomości'}</p>
       ) : null }
-
       { state.succeeded
           ? <p>Dziękujemy za wiadmość!</p>
           : null
       }
-
       <StyledButton type="submit" disabled={state.submitting}>Wyślij</StyledButton>
-      
     </ContactFormWrapper>
-
-
-
   )
 }
