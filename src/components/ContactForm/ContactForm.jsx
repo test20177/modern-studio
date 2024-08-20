@@ -1,8 +1,8 @@
 import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import { ContactFormWrapper } from './ContactForm.styles';
 import { HighlightedHeading } from '../HighlightedHeading/HighlightedHeading';
-import { StyledButton } from  '../../assets/styles/pages/homepage.styles';
-import { useForm, ValidationError } from '@formspree/react';
+import { StyledButton } from '../../assets/styles/pages/homepage.styles';
 
 export const ContactForm = () => {
 

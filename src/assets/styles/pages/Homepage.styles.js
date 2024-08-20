@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { StyledList } from '../../../components/StyledList/StyledList';
+import { CornerEffect } from '../../../components/CornerEffectProvider/CornerEffect';
 import arrowIcon from '../arrow.svg';
-import { StyledList } from 'components/StyledList/StyledList';
-import { CornerEffect } from 'components/CornerEffectProvider/CornerEffect';
 
 export const StyledButton = styled.button`
   border: 1px solid ${({ theme }) => theme.color.dark};

@@ -23,7 +23,7 @@ import {
   TeamImage,
   StyledReview,
   ShowcaseCorner,
-} from 'assets/styles/pages/homepage.styles';
+} from '../assets/styles/pages/homepage.styles';
 import { HeroImage } from '../assets/styles/pages/uslugi.styles';
 
 const HomePage = ({ data }) => (
